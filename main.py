@@ -1,5 +1,7 @@
 import pygame
 from title import *
+import asyncio
+
 pygame.init()
 
 width = 1280
@@ -77,18 +79,20 @@ def update_display():
 
 
 
+async def main():
+    run = True
+    title_music.play()
+    while run:
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                run = False
+                pygame.quit
+                quit()
+        update_display()
+        pygame.display.update()
 
-run = True
-title_music.play()
-while run:
-    for event in pygame.event.get():
-        if event.type == pygame.QUIT:
-            run = False
-            pygame.quit
-            quit()
-    update_display()
-    pygame.display.update()
 
+asyncio.run(main())
 
 
 
